@@ -1,0 +1,10 @@
+[project]
+name = "agentq"
+version = "0.1.0"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["agentq"]
