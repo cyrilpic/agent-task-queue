@@ -16,5 +16,6 @@ class Task:
     spec: str
     status: Status = Status.PENDING
     attempts: int = 0
+    validation_attempts: int = 0
     output: str | None = None
     errors: list[str] = field(default_factory=list)
