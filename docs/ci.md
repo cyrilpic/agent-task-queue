@@ -24,5 +24,5 @@ protection on `main` and `master`:
 3. Prefer “Require branches to be up to date before merging.”
 4. Avoid bypass allowances for the default role if merge blocking must be real.
 
-Until the validation checkpoint in `TASK.md` is implemented, `test` and
-`task-constraints` are expected to stay red.
+With the validation checkpoint in place, all three jobs are expected to pass
+on a clean tree.
