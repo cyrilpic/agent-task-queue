@@ -1,7 +1,6 @@
+import time
 from collections import deque
 from typing import Callable
-
-import time
 
 from agentq.models import Status, Task
 from agentq.retry import RetryPolicy
@@ -10,7 +9,11 @@ Worker = Callable[[Task], str]
 
 
 class TaskQueue:
-    def __init__(self, retry: RetryPolicy | None = None, sleep: Callable[[float], None] = time.sleep):
+    def __init__(
+        self,
+        retry: RetryPolicy | None = None,
+        sleep: Callable[[float], None] = time.sleep,
+    ):
         self._pending: deque[Task] = deque()
         self._tasks: dict[str, Task] = {}
         self.retry = retry or RetryPolicy()

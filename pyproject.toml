@@ -4,7 +4,24 @@ version = "0.1.0"
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-dev = ["pytest>=7"]
+dev = [
+    "pytest>=7",
+    "pytest-timeout>=2",
+    "ruff>=0.6",
+]
 
 [tool.setuptools]
 packages = ["agentq"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+markers = [
+    "task_constraints: exercises TASK.md acceptance rules",
+]
+timeout = 5
